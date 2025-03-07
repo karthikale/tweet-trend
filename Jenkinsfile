@@ -11,7 +11,7 @@
         stages {
             stage("build"){
                 steps {
-                    sh 'mvn clean deploy -DskipTests'
+                    sh 'mvn clean deploy'
                 }
                 
             }
