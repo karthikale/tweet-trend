@@ -1,4 +1,4 @@
-    pipeline {
+pipeline {
         agent {
             node{
             label 'maven'   
@@ -13,7 +13,7 @@
                 steps {
                     sh 'mvn clean deploy'
                 }
-                
+            }    
             
         }
-    }
+}
