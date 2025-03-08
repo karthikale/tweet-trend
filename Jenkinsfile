@@ -13,7 +13,7 @@
                 steps {
                     sh 'mvn clean deploy'
                 }
-                
+            }    
     
         }
-    }
+   } 
