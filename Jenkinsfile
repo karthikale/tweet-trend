@@ -9,7 +9,7 @@
         PATH = "/opt/apache-maven-3.9.9/bin:${PATH}"
     }    
         stages {
-            stage("build"){
+            stage("build-now"){
                 steps {
                     sh 'mvn clean deploy'
                 }
