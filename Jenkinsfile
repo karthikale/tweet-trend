@@ -18,12 +18,12 @@ def registry = 'https://trialya7rhd.jfrog.io/'
                 } 
             }    
     
-        }
+        
 
-        stage("Jar Publish") {
-        steps {
-            script {
-                    echo '<--------------- Jar Publish Started --------------->'
+            stage("Jar Publish") {
+              steps {
+                 script {
+                     echo '<--------------- Jar Publish Started --------------->'
                      def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog-token"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
@@ -39,10 +39,10 @@ def registry = 'https://trialya7rhd.jfrog.io/'
                      }"""
                      def buildInfo = server.upload(uploadSpec)
                      buildInfo.env.collect()
-                     server.publishBuildInfo(buildInfo)
-                     echo '<--------------- Jar Publish Ended --------------->'  
-            
+                    }server.publishBuildInfo(buildInfo)
+                }     echo '<--------------- Jar Publish Ended --------------->'  
             }
-        }   
-        }
+            
+        }     
+        
     } 
