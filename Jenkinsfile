@@ -1,4 +1,4 @@
-def registry = 'https://trialya7rhd.jfrog.io/artifactory/api/maven/studio'
+def registry = 'https://trialya7rhd.jfrog.io'
 
 pipeline {
     agent {
@@ -31,7 +31,7 @@ pipeline {
                         "files": [
                             {
                                 "pattern": "jarstaging/(*)",
-                                "target": "libs-release-local/{1}",
+                                "target": "libs-release-local/com/valaxy/demo-workshop/2.1.4/{1}",  // Target repository and path
                                 "flat": "false",
                                 "props": "${properties}",
                                 "exclusions": ["*.sha1", "*.md5"]
