@@ -1,4 +1,4 @@
-def registry = 'https://trialya7rhd.jfrog.io'
+def registry = 'https://trialya7rhd.jfrog.io/artifactory/api/maven/studio'
 
 pipeline {
     agent {
